@@ -1,0 +1,19 @@
+# in this problem, I use hash method which resembles in problem 1
+# after checking other's solution, I found out there exists extant functions like set()
+'''
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen = {}
+        for i, value in enumerate(nums):
+            if value in seen:
+                return True
+            else:
+                seen[value] = i
+        return False
+'''
+
+# this method does not reduce the time complexity, which is still O(n), 
+# but the expression is concise!     
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(set(nums)) != len(nums)
